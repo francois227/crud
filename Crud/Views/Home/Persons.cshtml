@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Crud.Models.Person>
+
+@{
+    ViewBag.Title = "Persons";
+}
+
+<h2>Persons</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (Model != null && Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Edad</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    Sin registros para mostrar
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
